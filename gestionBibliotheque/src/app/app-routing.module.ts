@@ -4,6 +4,7 @@ import { AjouterBibliothequeComponent } from './components/ajouter-bibliotheque/
 import { HomeComponent } from './components/home/home.component';
 import { ListeBibliothequesComponent } from './components/liste-bibliotheques/liste-bibliotheques.component';
 import { LivresComponent } from './components/livres/livres.component';
+import { LoginComponent } from './components/login/login.component';
 import { RechercheBibliothequeComponent } from './components/recherche-bibliotheque/recherche-bibliotheque.component';
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path:"liste-bibliotheques",component:ListeBibliothequesComponent},
   {path:"ajouter-bibliotheque",component:AjouterBibliothequeComponent},
   {path:"rechercher-bibliotheque",component:RechercheBibliothequeComponent},
-  {path:"livres",component:LivresComponent}
+  {path:"livres",component:LivresComponent},
+  {path:"connexion",component:LoginComponent}
 ];
 
 @NgModule({

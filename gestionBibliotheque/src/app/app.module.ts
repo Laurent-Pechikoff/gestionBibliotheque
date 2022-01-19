@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RechercheBibliothequeComponent } from './components/recherche-bibliotheque/recherche-bibliotheque.component';
 import { LivresComponent } from './components/livres/livres.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LivresComponent } from './components/livres/livres.component';
     AjouterBibliothequeComponent,
     HomeComponent,
     RechercheBibliothequeComponent,
-    LivresComponent
+    LivresComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

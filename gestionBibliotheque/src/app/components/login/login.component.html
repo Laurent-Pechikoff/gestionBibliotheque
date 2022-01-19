@@ -1,0 +1,16 @@
+<h1 class="text-center">Formulaire de connexion</h1>
+<div class="m-3">
+    <form #loginForm="ngForm" (ngSubmit)="verifLogin(loginForm)">
+        <div class="mb-3">
+            <label for="prenom" class="form-label">Entrez votre prenom</label>
+            <input type="text" class="form-control" name="prenom" id="prenom" aria-describedby="emailHelp" ngModel>
+
+        </div>
+        <div class="mb-3">
+            <label for="motDePass" class="form-label">Password</label>
+            <input type="password" class="form-control" name="motDePass" id="motDePass" ngModel>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Se connecter</button>
+    </form>
+</div>

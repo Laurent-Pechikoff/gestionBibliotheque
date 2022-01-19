@@ -1,0 +1,12 @@
+h1{
+    font-family: 'Shizuru', cursive;
+    padding-top: 45vh;
+}
+section{
+    
+    height: 100vh;
+    background-image: url("https://us.123rf.com/450wm/urfingus/urfingus1406/urfingus140600255/29323465-l-%C3%A9ducation-e-learning-ou-la-biblioth%C3%A8que-d-internet-image-conceptuelle.jpg?ver=6");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+}

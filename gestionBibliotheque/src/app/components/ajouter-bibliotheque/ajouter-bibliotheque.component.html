@@ -1,0 +1,21 @@
+<h2 class="text-center">Ajouter une nouvelle bibliotheque</h2>
+
+<div class="container">
+  <form  (ngSubmit)="onSubmit(bibliothequeForm)" #bibliothequeForm = "ngForm">
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom de la biblioteque</label>
+      <input type="text" class="form-control" id="nom" name="nom" ngModel>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input type="text" class="form-control" id="description" name="description" ngModel>
+    </div>
+    <div class="mb-3">
+      <label for="photo" class="form-label">Adresse url de la photo</label>
+      <input type="text" class="form-control" id="photo" name="photo" ngModel>
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+    </div>
+  </form>
+</div>

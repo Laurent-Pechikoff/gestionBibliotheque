@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: rgba(230, 228, 219, 0.651);
+    font-family: 'Pushster', cursive;
+}
+#home{
+    
+    font-weight: 700;
+    color: white;
+}
+
+footer{
+    
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(252, 247, 240);
+}

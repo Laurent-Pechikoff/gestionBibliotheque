@@ -1,0 +1,44 @@
+<div class="d-inline-flex justify-content-around">
+    <div class="container col-5 mt-4">
+        <!-- pour les bibliotheques -->
+        <div class="row">
+            <div class="card  mt-4" *ngFor="let elt of listeBibliotheque">
+                <ul class="list-group list-group-flush" name="ul">
+                    <li class="list-group-item" name="li" id="{{elt.id}}"
+                        [ngClass]="(status == elt.id) ? 'bg-success':''">Nom bibliotheque : {{elt.nom}}</li>
+                    <button class="col-4 btn btn-info" (click)="afficheLivreParBiblio(elt)">Afficher livre</button>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- pour les livres -->
+    <div class="container col-5 mt-4">
+        <div class="quantiteLivre">
+            <h3>Recherche par nombre de livres</h3>
+            <form class="d-inline-flex justify-content-around align-items-center"
+                (ngSubmit)="afficheLivreParQuantite(qteLivreForm)" #qteLivreForm="ngForm">
+                <div>
+                    <label for="minQuantite" class="col-12">Entrez la valeur minimum de livres</label>
+                    <input type="number" name="minQuantite" ngModel>
+                </div>
+                <div>
+                    <label for="maxQuantite" class="col-12">Entrez la valeur maximum de livres</label>
+                    <input type="number" name="maxQuantite" ngModel>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="card" *ngFor="let etl of listeLivres">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Nom livre : {{etl.nom}} </li>
+                    <!-- <li class="list-group-item">Appartenant a bibliotheque : {{etl.bibliotheque}}</li> -->
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

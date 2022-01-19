@@ -1,0 +1,80 @@
+<h1 class="text-center">Mes bibliothèques</h1>
+
+
+<!-- *****************affichage modal pour ajout bibliotheques********************* -->
+<div class="container">
+    <button class="col-1 btn btn-success" (click)="afficheFormAjout()" data-bs-toggle="modal"
+        data-bs-target="#ajoutModal" id="btnAjouter">Ajouter</button>
+
+    <div class="row p-2">
+        <div class="col-12">
+            <div>
+                <div class="modal fade" id="ajoutModal" tabindex="-1" aria-labelledby="ajoutModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <app-ajouter-bibliotheque></app-ajouter-bibliotheque>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- *****************affichage des bibliotheques********************* -->
+        <div class="card col-4 mt-2" *ngFor="let elt of listeBibliotheque">
+            <div class="zoom">
+                <img src={{elt.photo}} class="card-img-top" alt="Photo de {{elt.nom}}">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{elt.nom}}</h5>
+                <p class="card-text">{{elt.description}}</p>
+
+            </div>
+            <div class="d-flex justify-content-evenly">
+                <button class="btn btn-warning" (click)="modifRecup(elt)" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Modifier</button>
+                <button class="btn btn-danger" (click)="suprimerBibliotheque(elt)">Suprimer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- *****************affichage modal pour modifier des bibliotheques********************* -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <h2 class="text-center">Modifier</h2>
+            <div *ngIf="afficherModif">
+                <div class="container">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nom" class="form-label">Nom de la biblioteque</label>
+                            <input type="text" class="form-control" id="nom" name="nom" #nom="ngModel"
+                                [(ngModel)]="bibliotheque.nom" ngModel>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <input type="text" class="form-control" id="description" name="description"
+                                #description="ngModel" [(ngModel)]="bibliotheque.description" ngModel>
+                        </div>
+                        <div class="mb-3">
+                            <label for="photo" class="form-label">Adresse url de la photo</label>
+                            <input type="text" class="form-control" id="photo" name="photo" #photo="ngModel"
+                                [(ngModel)]="bibliotheque.photo" ngModel>
+                        </div>
+                        <div>
+                            <div class="mb-3 d-flex justify-content-evenly">
+                                <button type="submit" class="btn btn-primary" (click)="modifierBibliotheque()"
+                                    data-bs-dismiss="modal">Valider modification</button>
+                                <!-- <button type="submit" class="btn btn-primary" (click)="cacherModif()">Annuler
+                                    modification</button> -->
+
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
